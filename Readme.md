@@ -36,4 +36,5 @@ Setup and Run Application
         * TSLint package. (e.g. /Users/rstaley/GitHub/aurelia-monterey-ts/node_modules/tslint)
         * Configuration file
           * search for tslint.json **&#8857;**
-  *
+  * *Run Command* **au run**
+  * Browse to url indicated in console log (e.g. http://localhost:9000)

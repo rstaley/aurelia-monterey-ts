@@ -1,9 +1,12 @@
 {
   "name": "aurelia-monterey-ts",
-  "source": "cli",
-  "path": "/Users/rstaley/Projects/GitHub",
-  "folder": "/Users/rstaley/Projects/GitHub",
   "type": "project:application",
+  "platform": {
+    "id": "web",
+    "displayName": "Web",
+    "output": "scripts",
+    "index": "index.html"
+  },
   "transpiler": {
     "id": "typescript",
     "displayName": "TypeScript",
@@ -26,26 +29,15 @@
     "fileExtension": ".css",
     "source": "src/**/*.css"
   },
+  "editor": {
+    "id": "vscode",
+    "displayName": "Visual Studio Code"
+  },
   "unitTestRunner": {
     "id": "karma",
     "displayName": "Karma",
     "source": "test/unit/**/*.ts"
   },
-  "testFramework": {
-    "id": "jasmine",
-    "displayName": "Jasmine"
-  },
-  "editor": {
-    "id": "webstorm",
-    "displayName": "WebStorm"
-  },
-  "platform": {
-    "id": "default",
-    "displayName": "Default",
-    "output": "scripts"
-  },
-  "workflow": null,
-  "defaultOrCustom": "custom",
   "paths": {
     "root": "src",
     "resources": "src/resources",
@@ -54,12 +46,17 @@
     "valueConverters": "src/resources/value-converters",
     "bindingBehaviors": "src/resources/binding-behaviors"
   },
+  "testFramework": {
+    "id": "jasmine",
+    "displayName": "Jasmine"
+  },
   "build": {
     "targets": [
       {
-        "id": "default",
-        "displayName": "Default",
-        "output": "scripts"
+        "id": "web",
+        "displayName": "Web",
+        "output": "scripts",
+        "index": "index.html"
       }
     ],
     "loader": {
@@ -93,7 +90,7 @@
         "name": "vendor-bundle.js",
         "prepend": [
           "node_modules/bluebird/js/browser/bluebird.core.js",
-          "scripts/require.js"
+          "node_modules/requirejs/require.js"
         ],
         "dependencies": [
           "aurelia-binding",
@@ -117,10 +114,26 @@
           "aurelia-task-queue",
           "aurelia-templating",
           "aurelia-templating-binding",
+          "jquery",
           {
-            "name": "text",
-            "path": "../scripts/text"
+            "name": "bootstrap",
+            "path": "../node_modules/bootstrap/dist",
+            "main": "js/bootstrap.min",
+            "deps": ["jquery"],
+            "exports": "$",
+            "resources": [
+              "css/bootstrap.css"
+            ]
           },
+          {
+            "name": "nprogress",
+            "path": "../node_modules/nprogress",
+            "main": "nprogress",
+            "resources": [
+              "nprogress.css"
+            ]
+          },
+          "text",
           {
             "name": "aurelia-templating-resources",
             "path": "../node_modules/aurelia-templating-resources/dist/amd",
