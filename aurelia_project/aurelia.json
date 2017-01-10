@@ -44,7 +44,8 @@
     "elements": "src/resources/elements",
     "attributes": "src/resources/attributes",
     "valueConverters": "src/resources/value-converters",
-    "bindingBehaviors": "src/resources/binding-behaviors"
+    "bindingBehaviors": "src/resources/binding-behaviors",
+    "nodeModules": "node_modules"
   },
   "testFramework": {
     "id": "jasmine",
@@ -131,14 +132,6 @@
             "main": "nprogress",
             "resources": [
               "nprogress.css"
-            ]
-          },
-          {
-            "name": "font-awesome",
-            "path": "../node_modules/font-awesome",
-            "main": "",
-            "resources": [
-              "css/font-awesome.css"
             ]
           },
           "text",
