@@ -133,6 +133,14 @@
               "nprogress.css"
             ]
           },
+          {
+            "name": "font-awesome",
+            "path": "../node_modules/font-awesome",
+            "main": "font-awesome",
+            "resources": [
+              "css/font-awesome.css"
+            ]
+          },
           "text",
           {
             "name": "aurelia-templating-resources",
